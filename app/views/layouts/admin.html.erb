@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title> Welcome to Gowee Dox!</title>
+  <title> Gowee Dox |  Admin:<%= controller.action_name %> </title>
   	<style type="text/css">
 	a { text-decoration:none; color: #FFFFFF; }
 	</style>
@@ -19,17 +19,14 @@
 	<div id="columns">
 		<div id="side">
 			
+			<%= link_to 'Logout', :controller => 'admin', :action => 'logout' %><br/>
+			<%= link_to 'Users', :controller => 'users', :action => 'index' %><br/><br />
+			
 			<a href="http://www.facebook.com">Home</a><br />
 			<a href="http://www.Google.com">Questions</a><br />
 			<a href="http://www.news.yahoo.com">News</a><br />
 			<a href="http://www.friendster.com">Contact</a><br />
 			
-			<br/><br/>
-			Sign up now!
-			<%= button_to  "Sign Up", :controller => 'users',:action => 'new' %><br/>
-			
-			Already have account?
-			<%= button_to  "   Login   ", :controller => 'admin',:action => 'login' %>
 		</div>
 		<div id="main">
 			<%= yield :layout %>
