@@ -1,0 +1,45 @@
+body {background:#333; margin:0000; padding:0000;}
+
+#banner {
+	background: #333;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font: small-caps 40px/40px "Arial", serif;
+	color: #33CCFF;
+	text-align: left;
+}
+
+#columns {
+	background: #33CCFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Arial";
+}
+
+#main {
+	margin-right: 17em;
+	padding-top: 4ex;
+    padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 15em;
+	background: #CCFFFF;
+}
+
+#side {
+	float: right;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-bottom: 10em;
+	width: 15em;
+	background: #33CCFF;
+}
+
+#extlinks
+{
+	text-align: center;
+	padding-top: 10px;
+	color: #FFFFFF;
+	font-family: "Arial", serif;
+	font-size: 15px;
+}
+
