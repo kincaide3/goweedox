@@ -2,6 +2,7 @@ class AdminController < ApplicationController
 
   # just display the form and wait for user to
   # enter a name and password
+   before_filter :authorize, :except => :login
   
   def login
     if request.post?
