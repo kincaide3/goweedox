@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users
+  map.root :controller => "welcome"
 
   # The priority is based upon order of creation: first created -> highest priority.
 
