@@ -2,12 +2,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
+	#@user = User.find(params[:user_id])
+=begin
     @users = User.find(:all, :order => :name)
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }
     end
+=end
   end
 
   # GET /users/1
@@ -38,14 +41,15 @@ class UsersController < ApplicationController
   end
 
   # POST /users
+	
   # POST /users.xml
   def create
     @user = User.new(params[:user])
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = 'User #{@user.name} was successfully created.'
-        format.html { redirect_to(:action => 'index') }#{ redirect_to(@user) }
+        flash[:notice] = "User \'#{@user.name}\' successfully created."
+        format.html { redirect_to(:action => 'index') }#{ redirect_to(@user) } 
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -54,6 +58,7 @@ class UsersController < ApplicationController
     end
   end
 
+    
   # PUT /users/1
   # PUT /users/1.xml
   def update
@@ -61,8 +66,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = 'User #{@user.name} was successfully updated.'
-        format.html { redirect_to(:action => 'index') } #{ redirect_to(@user) }
+        flash[:notice] = "User \'#{@user.name}\' successfully updated."
+        format.html { redirect_to(:controller => 'admin', :action => 'index') } #{ redirect_to(@user) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,9 +81,10 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    flash[:notice] = "User \'#{@user.name}\' is now deleted."
 
     respond_to do |format|
-      format.html { redirect_to(users_url) }
+      format.html { redirect_to(:controller => 'admin', :action => 'index') }
       format.xml  { head :ok }
     end
   end

@@ -19,12 +19,15 @@
 	<div id="columns">
 		<div id="side">
 			
-			<a href="http://www.facebook.com">Home</a><br />
+			<%= link_to 'Home', :controller => 'welcome', :action => 'index' %><br />
 			<a href="http://www.Google.com">Questions</a><br />
 			<a href="http://www.news.yahoo.com">News</a><br />
 			<a href="http://www.friendster.com">Contact</a><br />
 		</div>
 		<div id="main">
+			<% if flash[:notice] %>
+      			<p style="color:red"><%= flash[:notice] %></p>
+   			<% end %>
 			<%= yield :layout %>
 		</div>
 	</div>

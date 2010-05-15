@@ -19,7 +19,7 @@
 	<div id="columns">
 		<div id="side">
 			
-			<a href="http://www.facebook.com">Home</a><br />
+			<%= link_to 'Home', :controller => 'welcome', :action => 'index' %><br />
 			<a href="http://www.Google.com">Questions</a><br />
 			<a href="http://www.news.yahoo.com">News</a><br />
 			<a href="http://www.friendster.com">Contact</a><br />
@@ -29,7 +29,7 @@
 			<%= button_to  "Sign Up", :controller => 'users',:action => 'new' %><br/>
 			
 			Already have account?
-			<%= button_to  "   Login   ", :controller => 'admin',:action => 'login' %>
+			<%= button_to  "   Login   ", :controller => 'admin',:action => 'login' %><br/>
 		</div>
 		<div id="main">
 			<%= yield :layout %>
