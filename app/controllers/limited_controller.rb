@@ -8,7 +8,6 @@ class LimitedController < ApplicationController
     redirect_to(:controller => "admin", :action => "login")
   end
     
-
   def index
   end
 

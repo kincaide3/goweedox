@@ -1,1 +1,5 @@
-<h1> Welcome to your Account! </h1>
+<% content_for :sidebbot do %>
+	<% if session[:user_id] %>
+	<%= link_to 'Logout', :controller => 'limited', :action => 'logout' %><br/>
+	<% end %>
+<% end %>

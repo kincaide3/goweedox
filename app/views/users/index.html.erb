@@ -1,1 +1,8 @@
-<h1>Hello!</h1>
+<h1>
+Hello 
+<%= @user.name %>
+</h1>
+
+<% content_for :sidebot do %>
+	<%= button_to "Log out", :controller => 'users', :action => 'logout' %>
+<% end %>

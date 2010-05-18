@@ -7,3 +7,18 @@
 
 <p>	Basically, the idea is to make it a wikipedia- like documentation app, but in a way that is more pleasing to the eyes, thereby generating more interest to the user, making the documentation and the sharing of information a lot more effective.</p>
 <br />
+
+<% content_for :sidetop do %>
+<%= link_to 'Home', :controller => 'welcome', :action => 'index' %><br />
+<a href="http://www.Google.com">Questions</a><br />
+<a href="http://www.news.yahoo.com">News</a><br />
+<a href="http://www.facebook.com">Contact</a><br />
+<% end %>
+
+<% content_for :sidebot do %>
+	<p>Have an account?</p>
+	<%= button_to "Sign in", :controller => 'users', :action => 'login' %> 
+	
+	<p>Sign up for free!</p>
+	<%= button_to "Sign up!", :controller => 'users', :action => 'new' %> 
+<% end %>

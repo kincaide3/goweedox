@@ -1,3 +1,17 @@
 <h1>Welcome Administrator!</h1>
 
 It's <%= Time.now %>
+
+<% content_for :sidetop do %>
+	<br /><br /><br /><br />
+	<% if session[:user_id] %>
+	<%= link_to 'Home', :controller => 'admin', :action => 'index' %><br />
+	<% else %>
+	<%= link_to 'Home', :controller => 'welcome', :action => 'index' %><br />
+	<% end %>
+	
+	<% if session[:user_id] %>
+	<%= link_to 'Logout', :controller => 'admin', :action => 'logout' %><br/>
+	<%= link_to 'Users', :controller => 'admin', :action => 'show_users' %><br/>
+	<% end %>
+<% end %>
